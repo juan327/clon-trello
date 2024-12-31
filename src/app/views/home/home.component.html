@@ -6,8 +6,7 @@
     <div class="content">
       <div class="content-lista">
         @for (listItem of this.$listas; track listItem.listId; let listIndex = $index) {
-        <div class="lista" (drop)="this.onDrop($event, listItem)"
-          (dragover)="this.onDragOver($event, listItem)"
+        <div class="lista" (drop)="this.onDrop($event, listItem)" (dragover)="this.onDragOver($event, listItem)"
           (dragleave)="this.onDragLeave($event, listItem)">
           <div class="lista-titulo">
             <h4 contenteditable="true" [id]="this.$HomeEnum.ID_INPUT_EDIT_LIST + listItem.listId"
@@ -16,9 +15,8 @@
           </div>
           <div class="lista-contenido" [id]="listItem.listId">
             @for (cardItem of listItem.cards; track cardItem.cardId; let cardIndex = $index) {
-            <div class="tarjeta" (click)="this.selectCard(cardItem)" draggable="true" 
-              (dragstart)="this.onDragStart($event, listItem, cardItem)"
-              (dragend)="this.onDragEnd()">
+            <div class="tarjeta" (click)="this.selectCard(cardItem)" draggable="true"
+              (dragstart)="this.onDragStart($event, listItem, cardItem)" (dragend)="this.onDragEnd()">
               @if(cardItem.nameEditing) {
               <span contenteditable="true"
                 [id]="this.$HomeEnum.ID_INPUT_EDIT_CARD + cardItem.cardId">{{cardItem.name}}</span>
@@ -27,20 +25,20 @@
               <span>{{cardItem.name}}</span>
               }
               <div class="tarjeta-botones">
-                <i class="pi pi-pencil" [class.isEditing]="cardItem.nameEditing" [ngClass]="{'pi-check': cardItem.nameEditing}"
-                  (click)="this.editarTarjeta(cardItem, $event)"></i>
+                <i class="pi pi-pencil" [class.isEditing]="cardItem.nameEditing"
+                  [ngClass]="{'pi-check': cardItem.nameEditing}" (click)="this.editarTarjeta(cardItem, $event)"></i>
                 <i class="pi pi-trash" (click)="this.eliminarTarjeta(listItem, cardItem, $event)"></i>
               </div>
             </div>
             }
             @if(listItem.cardPreview !== null) {
-              <div class="tarjeta" style="opacity: 0.5;">
-                <span>{{listItem.cardPreview.name}}</span>
-                <div class="tarjeta-botones">
-                  <i class="pi pi-pencil"></i>
-                  <i class="pi pi-trash"></i>
-                </div>
+            <div class="tarjeta" style="opacity: 0.5;">
+              <span>{{listItem.cardPreview.name}}</span>
+              <div class="tarjeta-botones">
+                <i class="pi pi-pencil"></i>
+                <i class="pi pi-trash"></i>
               </div>
+            </div>
             }
           </div>
           <div class="lista-botones">
@@ -57,30 +55,38 @@
     </div>
   </section>
   <footer>
-    Este tablero fue desarrollado usando Angular, css, tailwindcss y bootstrap4 como muestra de mis habilidades en desarrollo front-end. Implementa características como agregar, editar, mover y eliminar tareas en columnas personalizables
-    <b>(V. 1.0.0)</b>
+    Este tablero fue desarrollado usando Angular, css, tailwindcss y bootstrap4 como muestra de mis habilidades en
+    desarrollo front-end. Implementa características como agregar, editar, mover y eliminar tareas en columnas
+    personalizables
+    <b>(V. 1.0.1)</b>
   </footer>
 </main>
 
 
 @if($selectedCard) {
-  <p-dialog [header]="this.$selectedCard.name" [(visible)]="$modals.card" [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-    [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-    @if(this.$selectedCard.descriptionEditing) {
-      <form [formGroup]="this.$modalForm" id="form-card" (ngSubmit)="this.submitEditarDescription(this.$selectedCard, this.$modalForm)">
-        <textarea formControlName="description" rows="5" [id]="this.$HomeEnum.ID_TEXTAREA_CARD" placeholder="Ingresa la descripción..." pInputTextarea></textarea>
-        <div class="form-botones">
-          <p-button label="Guardar" severity="success" type="submit"></p-button>
-          <p-button label="Cancelar" severity="secondary" type="button" (click)="this.cancelEditarDescription(this.$selectedCard)"></p-button>
-        </div>
-      </form>
-    }
-    @else {
-      @if(this.$selectedCard.description !== '' && this.$selectedCard.description !== null && this.$selectedCard.description !== undefined) {
-        <p (click)="this.editarDescription(this.$selectedCard)" class="card-description" [innerText]="this.$selectedCard.description"></p>
-      } @else {
-        <p (click)="this.editarDescription(this.$selectedCard)" class="card-description">No hay descripción...</p>
-      }
-    }
-  </p-dialog>
+<p-dialog [header]="this.$selectedCard.name" [(visible)]="$modals.card" [modal]="true"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false"
+  [resizable]="false">
+  @if(this.$selectedCard.descriptionEditing) {
+  <form [formGroup]="this.$modalForm" id="form-card"
+    (ngSubmit)="this.submitEditarDescription(this.$selectedCard, this.$modalForm)">
+    <textarea formControlName="description" rows="5" [id]="this.$HomeEnum.ID_TEXTAREA_CARD"
+      placeholder="Ingresa la descripción..." pInputTextarea></textarea>
+    <div class="form-botones">
+      <p-button label="Guardar" severity="success" type="submit"></p-button>
+      <p-button label="Cancelar" severity="secondary" type="button"
+        (click)="this.cancelEditarDescription(this.$selectedCard)"></p-button>
+    </div>
+  </form>
+  }
+  @else {
+  @if(this.$selectedCard.description !== '' && this.$selectedCard.description !== null && this.$selectedCard.description
+  !== undefined) {
+  <p (click)="this.editarDescription(this.$selectedCard)" class="card-description"
+    [innerText]="this.$selectedCard.description"></p>
+  } @else {
+  <p (click)="this.editarDescription(this.$selectedCard)" class="card-description">No hay descripción...</p>
+  }
+  }
+</p-dialog>
 }

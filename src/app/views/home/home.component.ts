@@ -163,6 +163,7 @@ export class HomeComponent implements OnInit {
   }
 
   public selectCard(cardItem: DTOCardEntity) {
+    if(cardItem.nameEditing === true) return;
     this.$modals.card = true;
     this.$selectedCard = cardItem;
   }
