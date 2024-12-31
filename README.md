@@ -1,27 +1,39 @@
-# JuanTrello
+# Ejemplo de Tablero Kanban (Estilo Trello)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+Este proyecto es un ejemplo de una aplicación de tablero Kanban desarrollado con **Angular**. Fue creado como una demostración de mis habilidades en el desarrollo front-end.
 
-## Development server
+## 🚀 Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Crear tarjetas**: Añade nuevas tareas en cualquier columna.
+- **Editar tarjetas**: Actualiza el contenido de las tareas.
+- **Mover tarjetas**: Arrastra y suelta tareas entre columnas.
+- **Eliminar tarjetas**: Elimina tareas cuando ya no sean necesarias.
+- **Persistencia de datos**: Los datos se guardan en el almacenamiento local del navegador.
+- **Diseño responsivo**: Optimizado para dispositivos móviles y escritorio.
 
-## Code scaffolding
+## 🛠️ Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: Framework principal para la construcción de la aplicación.
+- **TypeScript**: Lenguaje de programación principal.
+- **Bootstrap/TailwindCSS** (opcional): Para el diseño y estilo.
+- **LocalStorage**: Para la persistencia de datos.
 
-## Build
+## 🎯 Objetivos del Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Este proyecto tiene como objetivo demostrar mis habilidades en:
 
-## Running unit tests
+1. Desarrollo de aplicaciones web con Angular.
+2. Uso de componentes, servicios y directivas personalizadas.
+3. Implementación de funcionalidades dinámicas como drag-and-drop.
+4. Uso de buenas prácticas en el diseño y estructura del código.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🖥️ Capturas de Pantalla
 
-## Running end-to-end tests
+*Incluye imágenes de tu aplicación en funcionamiento aquí para mostrar visualmente sus características.*
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Cómo Ejecutar el Proyecto
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Clonar el repositorio:
+```bash
+git clone https://github.com/juan327/clon-trello.git
+cd clon-trello
