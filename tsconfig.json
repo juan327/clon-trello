@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./docs",
     "baseUrl": "./", 
     "paths": {
       "@app/*": ["src/app/*"]
