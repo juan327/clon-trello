@@ -58,7 +58,7 @@ https://juan327.github.io/clon-trello
 
 ## 📌 Recursos Utilizados
 
-- [Trello](https://trello.com)
+- Inspirado por [Trello](https://trello.com)
 - [Angular](https://angular.io)
 - [TypeScript](https://www.typescriptlang.org)
 - [TailwindCSS](https://tailwindcss.com)
