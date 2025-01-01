@@ -56,6 +56,19 @@ La aplicación estará disponible en http://localhost:4200
 
 https://juan327.github.io/clon-trello
 
+## 📌 Recursos Utilizados
+
+- [Trello](https://trello.com)
+- [Angular](https://angular.io)
+- [TypeScript](https://www.typescriptlang.org)
+- [TailwindCSS](https://tailwindcss.com)
+- [Bootstrap](https://getbootstrap.com)
+- [Material Design](https://material.io)
+- [Angular Editor](https://www.npmjs.com/package/@kolkov/angular-editor)
+- [Quill](https://quilljs.com)
+- [PrimeNG](https://www.primefaces.org/primeng)
+- [Prime Icons](https://www.primefaces.org/primeicons)
+
 ## 📝 Licencia
 
-Este proyecto está licenciado bajo licencia **MIT**. Puedes ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la licencia MIT.
