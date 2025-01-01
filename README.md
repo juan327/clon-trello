@@ -27,10 +27,6 @@ Este proyecto tiene como objetivo demostrar mis habilidades en:
 3. Implementación de funcionalidades dinámicas como drag-and-drop.
 4. Uso de buenas prácticas en el diseño y estructura del código.
 
-## 🖥️ Capturas de Pantalla
-
-*Incluye imágenes de tu aplicación en funcionamiento aquí para mostrar visualmente sus características.*
-
 ## 🚀 Cómo Ejecutar el Proyecto
 
 ### Clonar el repositorio:
