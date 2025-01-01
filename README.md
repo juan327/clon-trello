@@ -52,3 +52,10 @@ ng serve
 
 La aplicación estará disponible en http://localhost:4200
 
+## 🌐 Demo
+
+https://juan327.github.io/clon-trello
+
+## 📝 Licencia
+
+Este proyecto está licenciado bajo licencia **MIT**. Puedes ver el archivo [LICENSE](LICENSE) para más detalles.
