@@ -27,9 +27,28 @@ Este proyecto tiene como objetivo demostrar mis habilidades en:
 3. Implementación de funcionalidades dinámicas como drag-and-drop.
 4. Uso de buenas prácticas en el diseño y estructura del código.
 
+## 🖥️ Requisitos
+
+- Node.js (V.18.19.1 o superior)
+- Angular CLI (V.18)
+
 ## 🚀 Cómo Ejecutar el Proyecto
 
 ### Clonar el repositorio:
 ```bash
 git clone https://github.com/juan327/clon-trello.git
 cd clon-trello
+```
+
+### Instalar dependencias:
+```bash
+npm install
+```
+
+### Ejecutar la aplicación:
+```bash
+ng serve
+```
+
+La aplicación estará disponible en http://localhost:4200
+
