@@ -9,7 +9,7 @@ import { IndexeddbService } from '@app/_services/indexeddb.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 
 export class HomeComponent implements OnInit {
@@ -237,7 +237,6 @@ export class HomeComponent implements OnInit {
 
   // Evita el comportamiento predeterminado para permitir el "drop"
   // ayuda a la previsualización del elemento
-  @Cooldown(50)
   public onDragOver(event: DragEvent, listItem: DTOListEntity) {
     event.preventDefault();
     if(this.$dragList === null) return;

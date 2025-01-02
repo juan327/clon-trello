@@ -7,43 +7,45 @@
       <div class="content-lista">
         @for (listItem of this.$listas; track listItem.listId; let listIndex = $index) {
         <div class="lista" (drop)="this.onDrop($event, listItem)" (dragover)="this.onDragOver($event, listItem)"
-          (dragleave)="this.onDragLeave($event, listItem)">
-          <div class="lista-titulo">
-            <h4 contenteditable="true" [id]="this.$HomeEnum.ID_INPUT_EDIT_LIST + listItem.listId"
-              [innerText]="listItem.name" (blur)="this.onBlurEditarLista(listItem)"></h4>
-            <i class="pi pi-trash" (click)="this.eliminarLista(listItem)"></i>
-          </div>
-          <div class="lista-contenido" [id]="listItem.listId">
-            @for (cardItem of listItem.cards; track cardItem.cardId; let cardIndex = $index) {
-            <div class="tarjeta" (click)="this.selectCard(cardItem)" draggable="true"
-              (dragstart)="this.onDragStart($event, listItem, cardItem)" (dragend)="this.onDragEnd()">
-              @if(cardItem.nameEditing) {
-              <span contenteditable="true"
-                [id]="this.$HomeEnum.ID_INPUT_EDIT_CARD + cardItem.cardId">{{cardItem.name}}</span>
-              }
-              @else {
-              <span>{{cardItem.name}}</span>
-              }
-              <div class="tarjeta-botones">
-                <i class="pi pi-pencil" [class.isEditing]="cardItem.nameEditing"
-                  [ngClass]="{'pi-check': cardItem.nameEditing}" (click)="this.editarTarjeta(cardItem, $event)"></i>
-                <i class="pi pi-trash" (click)="this.eliminarTarjeta(listItem, cardItem, $event)"></i>
-              </div>
+        (dragleave)="this.onDragLeave($event, listItem)">
+          <div class="lista-cuerpo">
+            <div class="lista-titulo">
+              <h4 contenteditable="true" [id]="this.$HomeEnum.ID_INPUT_EDIT_LIST + listItem.listId"
+                [innerText]="listItem.name" (blur)="this.onBlurEditarLista(listItem)"></h4>
+              <i class="pi pi-trash" (click)="this.eliminarLista(listItem)"></i>
             </div>
-            }
-            @if(listItem.cardPreview !== null) {
-            <div class="tarjeta" style="opacity: 0.5;">
-              <span>{{listItem.cardPreview.name}}</span>
-              <div class="tarjeta-botones">
-                <i class="pi pi-pencil"></i>
-                <i class="pi pi-trash"></i>
+            <div class="lista-contenido" [id]="listItem.listId">
+              @for (cardItem of listItem.cards; track cardItem.cardId; let cardIndex = $index) {
+              <div class="tarjeta" (click)="this.selectCard(cardItem)" draggable="true"
+                (dragstart)="this.onDragStart($event, listItem, cardItem)" (dragend)="this.onDragEnd()">
+                @if(cardItem.nameEditing) {
+                <span contenteditable="true"
+                  [id]="this.$HomeEnum.ID_INPUT_EDIT_CARD + cardItem.cardId">{{cardItem.name}}</span>
+                }
+                @else {
+                <span>{{cardItem.name}}</span>
+                }
+                <div class="tarjeta-botones">
+                  <i class="pi pi-pencil" [class.isEditing]="cardItem.nameEditing"
+                    [ngClass]="{'pi-check': cardItem.nameEditing}" (click)="this.editarTarjeta(cardItem, $event)"></i>
+                  <i class="pi pi-trash" (click)="this.eliminarTarjeta(listItem, cardItem, $event)"></i>
+                </div>
               </div>
+              }
+              @if(listItem.cardPreview !== null) {
+              <div class="tarjeta" style="opacity: 0.5;">
+                <span>{{listItem.cardPreview.name}}</span>
+                <div class="tarjeta-botones">
+                  <i class="pi pi-pencil"></i>
+                  <i class="pi pi-trash"></i>
+                </div>
+              </div>
+              }
             </div>
-            }
-          </div>
-          <div class="lista-botones">
-            <p-button label="Añadir tarjeta" icon="pi pi-plus" class="w-full" styleClass="w-full"
-              (click)="this.agregarTarjeta(listItem)"></p-button>
+            <div class="lista-botones">
+              <p-button label="Añadir tarjeta" icon="pi pi-plus" class="w-full" styleClass="w-full"
+                (click)="this.agregarTarjeta(listItem)"></p-button>
+            </div>
           </div>
         </div>
         }

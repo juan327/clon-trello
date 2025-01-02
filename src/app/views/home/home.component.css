@@ -28,118 +28,133 @@ main {
 
         .content {
             display: flex;
+            height: 100%;
             
             .content-lista {
                 display: flex;
                 flex-wrap: nowrap;
                 gap: 10px;
-                align-items: start;
     
                 /* #region lista */
                 .lista {
-                    background-color: #000;
-                    padding: 1rem;
-                    border-radius: 10px;
-                    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0,0.8);
-                    display: grid;
-                    grid-template-rows: auto 1fr auto;
-                    gap: 10px;
-                    overflow: hidden;
                     width: 300px;
-        
-                    &.solo {
-                        grid-template-rows: 1fr;
+                    position: relative;
+
+                    .lista-drag {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        pointer-events: none;
                     }
-        
-                    /* #region lista-titulo */
-                    .lista-titulo {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        gap: 2px;
-                        h4 {
-                            margin: 0;
-                            &:focus {
-                                outline: none;
-                                background-color: #22272B;
-                            }
-                        }
-                        i {
-                            cursor: pointer;
-                            transition: background-color .3s ease;
-                            border-radius: 100%;
-                            padding: 6px;
-        
-                            &:hover {
-                                background-color: #22272b;
-                            }
-                        }
-                    }
-                    /* #endregion */
-        
-                    /* #region lista-contenido */
-                    .lista-contenido {
-                        display: flex;
-                        flex-direction: column;
+
+                    .lista-cuerpo {
+                        overflow: hidden;
+                        background-color: #000;
+                        padding: 1rem;
+                        border-radius: 10px;
+                        box-shadow: 3px 3px 10px 2px rgba(0, 0, 0,0.8);
+                        display: grid;
+                        grid-template-rows: auto 1fr auto;
                         gap: 10px;
-        
-                        .tarjeta {
-                            background-color: #22272b;
+
+                        &.solo {
+                            grid-template-rows: 1fr;
+                        }
+            
+                        /* #region lista-titulo */
+                        .lista-titulo {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
                             gap: 2px;
-                            padding: 10px 15px;
-                            border-radius: 10px;
-                            cursor: pointer;
-        
-                            span {
-                                font-weight: bold;
-                                transition: background-color .3s ease;
-        
+                            h4 {
+                                margin: 0;
                                 &:focus {
                                     outline: none;
                                     background-color: #22272B;
                                 }
                             }
-        
-                            .tarjeta-botones {
+                            i {
+                                cursor: pointer;
+                                transition: background-color .3s ease;
+                                border-radius: 100%;
+                                padding: 6px;
+            
+                                &:hover {
+                                    background-color: #22272b;
+                                }
+                            }
+                        }
+                        /* #endregion */
+            
+                        /* #region lista-contenido */
+                        .lista-contenido {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+            
+                            .tarjeta {
+                                background-color: #22272b;
                                 display: flex;
-                                gap: 0.1rem;
-        
-                                i {
-                                    cursor: pointer;
+                                justify-content: space-between;
+                                align-items: center;
+                                gap: 2px;
+                                padding: 10px 15px;
+                                border-radius: 10px;
+                                cursor: pointer;
+            
+                                span {
+                                    font-weight: bold;
                                     transition: background-color .3s ease;
-                                    border-radius: 100%;
-                                    padding: 6px;
-                                    z-index: 100;
-        
-                                    &:hover {
-                                        @apply bg-black;
+            
+                                    &:focus {
+                                        outline: none;
+                                        background-color: #22272B;
                                     }
-        
-                                    &.isEditing {
-                                        background-color: #579DFF;
+                                }
+            
+                                .tarjeta-botones {
+                                    display: flex;
+                                    gap: 0.1rem;
+            
+                                    i {
+                                        cursor: pointer;
+                                        transition: background-color .3s ease;
+                                        border-radius: 100%;
+                                        padding: 6px;
+                                        z-index: 100;
+            
                                         &:hover {
-                                            background-color: #85B8FF;
+                                            @apply bg-black;
+                                        }
+            
+                                        &.isEditing {
+                                            background-color: #579DFF;
+                                            &:hover {
+                                                background-color: #85B8FF;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                    /* #endregion */
-            
-                    /* #region lista-botones */
-                    .lista-botones {
-                        p-button {
-                            width: 100%;
-                            button {
+                        /* #endregion */
+                
+                        /* #region lista-botones */
+                        .lista-botones {
+                            p-button {
                                 width: 100%;
+                                button {
+                                    width: 100%;
+                                }
                             }
                         }
+                        /* #endregion */
                     }
-                    /* #endregion */
+        
                 }
                 /* #endregion */
             }
