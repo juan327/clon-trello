@@ -128,7 +128,7 @@ main {
                                         z-index: 100;
             
                                         &:hover {
-                                            @apply bg-black;
+                                            background-color: #000;
                                         }
             
                                         &.isEditing {

@@ -66,29 +66,28 @@
 
 
 @if($selectedCard) {
-<p-dialog [header]="this.$selectedCard.name" [(visible)]="$modals.card" [modal]="true"
-  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false"
-  [resizable]="false">
-  @if(this.$selectedCard.descriptionEditing) {
-  <form [formGroup]="this.$modalForm" id="form-card"
-    (ngSubmit)="this.submitEditarDescription(this.$selectedCard, this.$modalForm)">
-    <textarea formControlName="description" rows="5" [id]="this.$HomeEnum.ID_TEXTAREA_CARD"
-      placeholder="Ingresa la descripción..." pInputTextarea></textarea>
-    <div class="form-botones">
-      <p-button label="Guardar" severity="success" type="submit"></p-button>
-      <p-button label="Cancelar" severity="secondary" type="button"
-        (click)="this.cancelEditarDescription(this.$selectedCard)"></p-button>
-    </div>
-  </form>
-  }
-  @else {
-  @if(this.$selectedCard.description !== '' && this.$selectedCard.description !== null && this.$selectedCard.description
-  !== undefined) {
-  <p (click)="this.editarDescription(this.$selectedCard)" class="card-description"
-    [innerText]="this.$selectedCard.description"></p>
-  } @else {
-  <p (click)="this.editarDescription(this.$selectedCard)" class="card-description">No hay descripción...</p>
-  }
-  }
-</p-dialog>
+  <p-dialog [header]="this.$selectedCard.name" [(visible)]="$modals.card" [modal]="true"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false"
+    [resizable]="false">
+    @if(this.$selectedCard.descriptionEditing) {
+      <form [formGroup]="this.$modalForm" id="form-card"
+        (ngSubmit)="this.submitEditarDescription(this.$selectedCard, this.$modalForm)">
+        <textarea formControlName="description" rows="5" [id]="this.$HomeEnum.ID_TEXTAREA_CARD"
+          placeholder="Ingresa la descripción..." pInputTextarea></textarea>
+        <div class="form-botones">
+          <p-button label="Guardar" severity="success" type="submit"></p-button>
+          <p-button label="Cancelar" severity="secondary" type="button"
+            (click)="this.cancelEditarDescription(this.$selectedCard)"></p-button>
+        </div>
+      </form>
+    }
+    @else {
+      @if(this.$selectedCard.description !== '' && this.$selectedCard.description !== null && this.$selectedCard.description !== undefined) {
+        <p (click)="this.editarDescription(this.$selectedCard)" class="card-description"
+          [innerText]="this.$selectedCard.description"></p>
+      } @else {
+        <p (click)="this.editarDescription(this.$selectedCard)" class="card-description">No hay descripción...</p>
+      }
+    }
+  </p-dialog>
 }

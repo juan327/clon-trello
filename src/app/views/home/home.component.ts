@@ -16,23 +16,23 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  genericService = inject(GenericService);
-  indexeddbService = inject(IndexeddbService);
-  fb = inject(FormBuilder);
+  private readonly genericService = inject(GenericService);
+  private readonly indexeddbService = inject(IndexeddbService);
+  private readonly fb = inject(FormBuilder);
 
-  $HomeEnum = HomeEnum;
-  $listas: DTOListEntity[] = [];
+  public readonly $HomeEnum = HomeEnum;
+  public $listas: DTOListEntity[] = [];
 
-  $modals: { card: boolean } = {
+  public $modals: { card: boolean } = {
     card: false,
   };
-  $selectedCard: DTOCardEntity | null = null;
-  $modalForm: FormGroup = this.fb.group({
+  public $selectedCard: DTOCardEntity | null = null;
+  public $modalForm: FormGroup = this.fb.group({
     description: new FormControl('')
   });
 
-  $dragCard: DTOCardEntity | null = null;
-  $dragList: DTOListEntity | null = null;
+  private $dragCard: DTOCardEntity | null = null;
+  private $dragList: DTOListEntity | null = null;
 
   public ngOnInit() {
     const tables = [{tableName: HomeEnum.TABLE_LISTAS_NAME as string, primaryKey: HomeEnum.TABLE_LISTAS_PRIMARYKEY as string}, {tableName: HomeEnum.TABLE_TARJETAS_NAME as string, primaryKey: HomeEnum.TABLE_TARJETAS_PRIMARYKEY as string}];
